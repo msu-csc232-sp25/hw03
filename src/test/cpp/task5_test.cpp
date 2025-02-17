@@ -12,14 +12,18 @@
  */
 
 #include <gtest/gtest.h>
+#include <vector>
 #include "csc232_test_utils.h"
+#include "hw03.h"
 
-namespace csc232 {
-    class Task5TestFixture : public CSC232BaseTestFixture {
+namespace csc232
+{
+    class Task5TestFixture : public CSC232BaseTestFixture
+    {
     public:
-        Task5TestFixture() = default;
+        Task5TestFixture( ) = default;
 
-        ~Task5TestFixture() override = default;
+        ~Task5TestFixture( ) override = default;
 
     protected:
         // Reusable objects for each unit test in this test fixture
@@ -33,6 +37,37 @@ namespace csc232 {
 
 #else
     // TODO: Add unit tests as needed for task 5
+    TEST_F( Task5TestFixture, ItValidatesSimplePrefixExpression )
+    {
+        for ( auto ch{ 'a' }; ch <= 'z'; ++ch )
+        {
+            std::string text;
+            text += ch;
+            EXPECT_TRUE( csc232::is_prefix( text ) );
+        }
+    }
+
+    TEST_F( Task5TestFixture, ItValidatesSimpleBinaryPrefixExpression )
+    {
+        std::vector< std::string > operators{ "+", "-", "*", "/" };
+        for ( const auto & op: operators )
+        {
+            std::string expr;
+            expr += op + "ab";
+            EXPECT_TRUE( csc232::is_prefix( expr ) );
+        }
+    }
+
+    TEST_F( Task5TestFixture, ItValidatesComplicatedPrefixExpression )
+    {
+        EXPECT_TRUE( csc232::is_prefix( "--a/b+c*def" ) );
+    }
+
+    TEST_F( Task5TestFixture, ItInvalidatesInfixExpression )
+    {
+        EXPECT_FALSE( csc232::is_prefix( "a+b" ) );
+    }
+
 #endif
 
 } // end namespace csc232
