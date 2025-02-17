@@ -13,13 +13,16 @@
 
 #include <gtest/gtest.h>
 #include "csc232_test_utils.h"
+#include "hw03.h"
 
-namespace csc232 {
-    class Task3TestFixture : public CSC232BaseTestFixture {
+namespace csc232
+{
+    class Task3TestFixture : public CSC232BaseTestFixture
+    {
     public:
-        Task3TestFixture() = default;
+        Task3TestFixture( ) = default;
 
-        ~Task3TestFixture() override = default;
+        ~Task3TestFixture( ) override = default;
 
     protected:
         // Reusable objects for each unit test in this test fixture
@@ -32,7 +35,53 @@ namespace csc232 {
     }
 
 #else
-    // TODO: Add unit tests as needed for task 3
+    // <word> = R | <D> | <D><word><S>
+    // <D>    = Q | P
+    // <S>    = 1
+    TEST_F(Task3TestFixture, ItValidatesRInExerciseLanguage)
+    {
+        EXPECT_TRUE(csc232::is_in_exercise("R"));
+    }
+
+    TEST_F(Task3TestFixture, ItValidatesQInExerciseLanguage)
+    {
+        EXPECT_TRUE(csc232::is_in_exercise("Q"));
+    }
+
+    TEST_F(Task3TestFixture, ItValidatesPInExerciseLanguage)
+    {
+        EXPECT_TRUE(csc232::is_in_exercise("P"));
+    }
+
+    TEST_F(Task3TestFixture, ItValidatesQR1InExerciseLanguage)
+    {
+        EXPECT_TRUE(csc232::is_in_exercise("QR1"));
+    }
+
+    TEST_F(Task3TestFixture, ItValidatesPR1InExerciseLanguage)
+    {
+        EXPECT_TRUE(csc232::is_in_exercise("PR1"));
+    }
+
+    TEST_F(Task3TestFixture, ItValidatesPQR11InExerciseLanguage)
+    {
+        EXPECT_TRUE(csc232::is_in_exercise("PQR11"));
+    }
+
+    TEST_F(Task3TestFixture, ItValidatesQPR11InExerciseLanguage)
+    {
+        EXPECT_TRUE(csc232::is_in_exercise("QPR11"));
+    }
+
+    TEST_F(Task3TestFixture, ItInvalidatesQPR1InExerciseLanguage)
+    {
+        EXPECT_FALSE(csc232::is_in_exercise("QPR1"));
+    }
+
+    TEST_F(Task3TestFixture, ItInvalidatesPQR1InExerciseLanguage)
+    {
+        EXPECT_FALSE(csc232::is_in_exercise("PQR1"));
+    }
 #endif
 
 } // end namespace csc232

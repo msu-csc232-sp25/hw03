@@ -13,8 +13,10 @@
 
 #include <gtest/gtest.h>
 #include "csc232_test_utils.h"
+#include "hw03.h"
 
 namespace csc232 {
+    // Task 1 - isPalindrome
     class Task1TestFixture : public CSC232BaseTestFixture {
     public:
         Task1TestFixture() = default;
@@ -32,7 +34,65 @@ namespace csc232 {
     }
 
 #else
-    // TODO: Add unit tests as needed for task 1
+    // Task 1 - isPalindrome
+    TEST_F(Task1TestFixture, ItValidatesEmptyStringAsPalindrome)
+    {
+        EXPECT_TRUE(csc232::is_palindrome(""));
+    }
+
+    TEST_F(Task1TestFixture, ItValidatesSingleLegalCharAsPalindrome)
+    {
+        for (auto ch{'a'}; ch <= 'z'; ++ch)
+        {
+            std::string text;
+            text += ch;
+            EXPECT_TRUE(csc232::is_palindrome(text));
+        }
+        for (auto ch{'A'}; ch <= 'Z'; ++ch)
+        {
+            std::string text;
+            text += ch;
+            EXPECT_TRUE(csc232::is_palindrome(text));
+        }
+    }
+
+    TEST_F(Task1TestFixture, ItValidatesPalindromesOfSizeTwo)
+    {
+        for (auto ch{'a'}; ch <= 'z'; ++ch)
+        {
+            std::string text;
+            text += ch;
+            text += ch;
+            EXPECT_TRUE(csc232::is_palindrome(text));
+        }
+        for (auto ch{'A'}; ch <= 'Z'; ++ch)
+        {
+            std::string text;
+            text += ch;
+            text += ch;
+            EXPECT_TRUE(csc232::is_palindrome(text));
+        }
+    }
+
+    TEST_F(Task1TestFixture, ItValidatesPalindromesOfSizeThree)
+    {
+        EXPECT_TRUE(csc232::is_palindrome("aba"));
+    }
+
+    TEST_F(Task1TestFixture, ItValidatesPalindromesOfSizeFour)
+    {
+        EXPECT_TRUE(csc232::is_palindrome("abba"));
+    }
+
+    TEST_F(Task1TestFixture, ItValidatesPalindromesOfSizeFive)
+    {
+        EXPECT_TRUE(csc232::is_palindrome("abCba"));
+    }
+
+    TEST_F(Task1TestFixture, ItInvalidatesNonPalindrome)
+    {
+        EXPECT_FALSE(csc232::is_palindrome("abab"));
+    }
 #endif
 
 } // end namespace csc232

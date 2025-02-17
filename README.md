@@ -1,22 +1,24 @@
-# LHWn - Title
+# HW03 - Language Processing and Prefix Expressions
 
-_A quick blurb or sub-title text_
+The rules of a language are given by a grammar. In this assignment, the 
+student implements a number of functions that are used to validate 
+membership in a language as prescribed by some grammar.
 
 ## Background
 
-Before proceeding with this lab, the student should take the time to read
+Before proceeding with this assignment, the student should take the time to read
 
-* this
-* that
-* and the other thing
+* [Chapter 5 Recursion: The Mirrors](https://msu.vitalsource.com/reader/books/9780138122782/epubcfi/6/124%5B%3Bvnd.vst.idref%3DP70010183410000000000000000017C9%5D!/4/2%5BP70010183410000000000000000017C9%5D/2/2%5BP70010183410000000000000000017CA%5D/7:0%5B%2C%20Re%5D)
+* [Chapter 6 Recursion as a Problem-Solving Technique](https://msu.vitalsource.com/reader/books/9780138122782/epubcfi/6/140%5B%3Bvnd.vst.idref%3DP7001018341000000000000000001BD2%5D!/4/2%5BP7001018341000000000000000001BD2%5D/2/2%5BP7001018341000000000000000001BD3%5D/7:0%5B%2CRec%5D)
 
 ## Objective
 
 Upon successful completion of this lab, the student has learned how to
 
-* do this
-* do that
-* do another thing
+* use recursion to implement functions that validate membership in a 
+  language prescribed by a grammar
+* process strings to locate the end of a prefix expression
+* assess whether an expression is a valid prefix expression
 
 ## Getting Started
 
@@ -90,33 +92,71 @@ _You may have to type the `q` character to get back to the command line prompt a
 
 This assignment consists of the following tasks:
 
-- Task 1: <TODO: Declare me!>
-- Task 2: <TODO: Declare me!>
-- Task 3: <TODO: Declare me!>
-- Task 4: <TODO: Declare me - or erase me!>
-- Task 5: <TODO: Declare me - or erase me!>
+- Task 1: Validating Palindromes
+- Task 2: Validating Membership in AnBn
+- Task 3: Validating Membership in L
+- Task 4: Finding the end of Prefix Expression
+- Task 5: Validating Prefix Expressions
 
-Pol, neuter abactor!
+### Task 1: Validating Palindromes
 
-### Task 1: <TODO: Declare me!>
+1. Locate the `TEST_TASK1` macro definition in the `csc232.h` header file 
+   and toggle its value from `FALSE` to `TRUE`.
+2. Locate the `TODO: Task 1` comment in the `hw03.cpp` source file and 
+   implement the function accordingly. Helpful comments located in the 
+   corresponding header file are found in the functions declaration doxygen 
+   comments.
+3. Execute the `task1_test` target to verify your solution.
+4. When you are happy with the results of the task's unit tests, stage, 
+   commit, and push your changes to GitHub.
 
-Ecce, urbs!
+### Task 2: Validating Membership in AnBn
 
-### Task 2: <TODO: Declare me!>
+1. Locate the `TEST_TASK2` macro definition in the `csc232.h` header file
+   and toggle its value from `FALSE` to `TRUE`.
+2. Locate the `TODO: Task 2` comment in the `hw03.cpp` source file and
+   implement the function accordingly. Helpful comments located in the
+   corresponding header file are found in the functions declaration doxygen
+   comments.
+3. Execute the `task2_test` target to verify your solution.
+4. When you are happy with the results of the task's unit tests, stage,
+   commit, and push your changes to GitHub.
 
-Ubi est dexter medicina?
+### Task 3: Validating Membership in L
 
-### Task 3: <TODO: Declare me!>
+1. Locate the `TEST_TASK3` macro definition in the `csc232.h` header file
+   and toggle its value from `FALSE` to `TRUE`.
+2. Locate the `TODO: Task 3` comment in the `hw03.cpp` source file and
+   implement the function accordingly. Helpful comments located in the
+   corresponding header file are found in the functions declaration doxygen
+   comments.
+3. Execute the `task3_test` target to verify your solution.
+4. When you are happy with the results of the task's unit tests, stage,
+   commit, and push your changes to GitHub.
 
-Ubi est dexter medicina?
+### Task 4: Finding the end of Prefix Expression
 
-### Task 4: <TODO: Declare me!>
+1. Locate the `TEST_TASK4` macro definition in the `csc232.h` header file
+   and toggle its value from `FALSE` to `TRUE`.
+2. Locate the `TODO: Task 4` comment in the `hw03.cpp` source file and
+   implement the function accordingly. Helpful comments located in the
+   corresponding header file are found in the functions declaration doxygen
+   comments.
+3. Execute the `task4_test` target to verify your solution.
+4. When you are happy with the results of the task's unit tests, stage,
+   commit, and push your changes to GitHub.
 
-Ubi est dexter medicina?
+### Task 5: Validating Prefix Expressions
 
-### Task 5: <TODO: Declare me!>
-
-Ubi est dexter medicina?
+1. Locate the `TEST_TASK5` macro definition in the `csc232.h` header file
+   and toggle its value from `FALSE` to `TRUE`.
+2. Locate the `TODO: Task 5` comment in the `hw03.cpp` source file and
+   implement the function accordingly. Helpful comments located in the
+   corresponding header file are found in the functions declaration doxygen
+   comments.
+3. Execute the `task5_test` target to verify your solution.
+4. When you are happy with the results of the task's unit tests, stage,
+   commit, and push your changes to GitHub.
 
 ## Submission Details
 
@@ -152,11 +192,11 @@ be granted for this oversight**.
 
 ### Due Date
 
-Your assignment submission is due by 11:59 PM, Saturday....
+Your assignment submission is due by 11:59 PM, Saturday, February 22, 2025.
 
 ### Grading Rubric
 
-This assignment is worth **3 points**.
+This assignment is worth **5 points**.
 
 | Criteria           | Exceeds Expectations         | Meets Expectations                  | Below Expectations                  | Failure                                        |
 |--------------------|------------------------------|-------------------------------------|-------------------------------------|------------------------------------------------|
